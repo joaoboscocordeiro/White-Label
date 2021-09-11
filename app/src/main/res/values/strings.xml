@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">White Label</string>
+
+    <!-- ProductsFragment -->
+    <string name="products_screen_title">Products</string>
+    <string name="products_fab_add_product">Add product</string>
+
+    <!-- AddProductFragment -->
+    <string name="add_product_screen_title">Add Product</string>
+    <string name="add_product_field_description_hint">Description</string>
+    <string name="add_product_field_price_hint">Price</string>
+    <string name="add_product_field_error">Mandatory field</string>
+    <string name="add_product_button_add_product">Add</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- ProductDetail -->
+    <string name="product_detail">Detail</string>
+</resources>
