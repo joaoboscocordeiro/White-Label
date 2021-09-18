@@ -1,4 +1,4 @@
-package br.com.multalpha.aplicativos.v1.appbikes.ui.products
+package br.com.multalpha.aplicativos.v1.whitelabel.ui.products
 
 import android.os.Bundle
 import android.view.LayoutInflater

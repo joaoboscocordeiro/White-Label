@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/drawable/ic_add.xml" value="0.2203125" />
         <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/drawable/ic_add_a_photo.xml" value="0.2203125" />
+        <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/layout/activity_product_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/layout/add_product_fragment.xml" value="0.25" />
         <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/layout/fragment_products.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/John Lima/AndroidStudioProjects/WhiteLabel/app/src/main/res/layout/item_product.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
