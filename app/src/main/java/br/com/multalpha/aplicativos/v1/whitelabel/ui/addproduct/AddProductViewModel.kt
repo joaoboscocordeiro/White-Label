@@ -9,9 +9,12 @@ import androidx.lifecycle.viewModelScope
 import br.com.multalpha.aplicativos.v1.appbikes.util.fromCurrency
 import br.com.multalpha.aplicativos.v1.whitelabel.R
 import br.com.multalpha.aplicativos.v1.whitelabel.domain.usecase.CreateProductUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AddProductViewModel(
+@HiltViewModel
+class AddProductViewModel @Inject constructor(
     private val createProductUseCase: CreateProductUseCase
 ) : ViewModel() {
 
@@ -43,14 +46,14 @@ class AddProductViewModel(
     }
 
     private fun getErrorStringResIdIfEmpty(value: String): Int? {
-        return if ( value.isEmpty() ) {
+        return if (value.isEmpty()) {
             isFormValid = false
             R.string.add_product_field_error
         } else null
     }
 
     private fun getDrawableResIdIfNull(value: Uri?): Int {
-        return if ( value == null ) {
+        return if (value == null) {
             isFormValid = false
             R.drawable.background_product_image_error
         } else R.drawable.background_product_image

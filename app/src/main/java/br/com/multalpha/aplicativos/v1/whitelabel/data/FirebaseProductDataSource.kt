@@ -9,6 +9,7 @@ import br.com.multalpha.aplicativos.v1.whitelabel.domain.model.Product
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
+import javax.inject.Inject
 import kotlin.coroutines.suspendCoroutine
 
 /**
@@ -16,7 +17,7 @@ import kotlin.coroutines.suspendCoroutine
  * e-mail - Support: ti.junior@gmail.com
  */
 
-class FirebaseProductDataSource(
+class FirebaseProductDataSource @Inject constructor(
     firebaseFirestore: FirebaseFirestore,
     firebaseStorage: FirebaseStorage
 ) : ProductDataSource {

@@ -5,6 +5,7 @@
     package="br.com.multalpha.aplicativos.v1.whitelabel">
 
     <application
+        android:name=".MyAplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="${appName}${appNameSuffix}"

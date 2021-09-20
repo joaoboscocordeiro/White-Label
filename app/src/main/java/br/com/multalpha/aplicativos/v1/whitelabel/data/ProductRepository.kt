@@ -2,12 +2,13 @@ package br.com.multalpha.aplicativos.v1.whitelabel.data
 
 import android.net.Uri
 import br.com.multalpha.aplicativos.v1.whitelabel.domain.model.Product
+import javax.inject.Inject
 
 /**
  * Created by João Bosco on 13/09/2021.
  * e-mail - Support: ti.junior@gmail.com
  */
-class ProductRepository(
+class ProductRepository @Inject constructor(
     private val dataSource: ProductDataSource
 ) {
 

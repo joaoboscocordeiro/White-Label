@@ -4,13 +4,14 @@ import android.net.Uri
 import br.com.multalpha.aplicativos.v1.whitelabel.data.ProductRepository
 import br.com.multalpha.aplicativos.v1.whitelabel.domain.model.Product
 import java.util.*
+import javax.inject.Inject
 
 /**
  * Created by João Bosco on 17/09/2021.
  * e-mail - Support: ti.junior@gmail.com
  */
 
-class CreateProductUseCaseImpl(
+class CreateProductUseCaseImpl @Inject constructor(
     private val uploadProductImageUseCase: UploadProductImageUseCase,
     private val productRepository: ProductRepository
 ) : CreateProductUseCase {
