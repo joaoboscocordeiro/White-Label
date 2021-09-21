@@ -6,7 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.navigation.fragment.findNavController
+import br.com.multalpha.aplicativos.v1.appbikes.util.PRODUCT_KEY
+import br.com.multalpha.aplicativos.v1.whitelabel.R
 import br.com.multalpha.aplicativos.v1.whitelabel.databinding.FragmentProductsBinding
+import br.com.multalpha.aplicativos.v1.whitelabel.domain.model.Product
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,8 +38,8 @@ class ProductsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setRecyclerView()
-        //setListeners()
-        //observeNavBackStack()
+        setListeners()
+        observeNavBackStack()
         observeVMEvents()
         getProducts()
     }
@@ -45,7 +51,7 @@ class ProductsFragment : Fragment() {
         }
     }
 
-   /* private fun setListeners() {
+   private fun setListeners() {
         with(binding) {
             swipeProducts.setOnRefreshListener {
                 getProducts()
@@ -55,13 +61,13 @@ class ProductsFragment : Fragment() {
                 findNavController().navigate(R.id.action_productsFragment_to_addProductFragment)
             }
         }
-    }*/
+    }
 
     private fun getProducts() {
         viewModel.getProducts()
     }
 
-    /*private fun observeNavBackStack() {
+    private fun observeNavBackStack() {
         findNavController().run {
             val navBackStackEntry = getBackStackEntry(R.id.productsFragment)
             val savedStateHandle = navBackStackEntry.savedStateHandle
@@ -86,7 +92,7 @@ class ProductsFragment : Fragment() {
                 }
             })
         }
-    }*/
+    }
 
     private fun observeVMEvents() {
         viewModel.productsData.observe(viewLifecycleOwner) { products ->
