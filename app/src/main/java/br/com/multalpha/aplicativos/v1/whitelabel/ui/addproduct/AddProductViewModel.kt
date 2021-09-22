@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.multalpha.aplicativos.v1.appbikes.util.fromCurrency
 import br.com.multalpha.aplicativos.v1.whitelabel.R
+import br.com.multalpha.aplicativos.v1.whitelabel.domain.model.Product
 import br.com.multalpha.aplicativos.v1.whitelabel.domain.usecase.CreateProductUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -27,6 +28,9 @@ class AddProductViewModel @Inject constructor(
     private val _priceFieldErrorResId = MutableLiveData<Int?>()
     val priceFieldErrorResId: LiveData<Int?> = _priceFieldErrorResId
 
+    private val _productCreate = MutableLiveData<Product>()
+    val productCreate: LiveData<Product> = _productCreate
+
     private var isFormValid = false
 
     fun createPruduct(description: String, price: String, imageUri: Uri?) = viewModelScope.launch {
@@ -39,6 +43,7 @@ class AddProductViewModel @Inject constructor(
         if (isFormValid) {
             try {
                 val product = createProductUseCase(description, price.fromCurrency(), imageUri!!)
+                _productCreate.value = product
             } catch (e: Exception) {
                 Log.d("CreateProduct", e.toString())
             }

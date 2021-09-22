@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import br.com.multalpha.aplicativos.v1.appbikes.util.CurrencyTextWatcher
+import br.com.multalpha.aplicativos.v1.appbikes.util.PRODUCT_KEY
 import br.com.multalpha.aplicativos.v1.whitelabel.databinding.AddProductFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
@@ -56,6 +58,13 @@ class AddProductFragment : BottomSheetDialogFragment() {
 
         viewModel.priceFieldErrorResId.observe(viewLifecycleOwner) { stringResId ->
             binding.inputLayoutPrice.setError(stringResId)
+        }
+
+        viewModel.productCreate.observe(viewLifecycleOwner) { product ->
+            findNavController().run {
+                previousBackStackEntry?.savedStateHandle?.set(PRODUCT_KEY, product)
+                popBackStack()
+            }
         }
     }
 
