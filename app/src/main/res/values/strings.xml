@@ -17,6 +17,9 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="products_error_access_denied">Access denied! Check the Firebase rules.</string>
+    <string name="products_error_unknown">Ops.. something  went wrong.</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
