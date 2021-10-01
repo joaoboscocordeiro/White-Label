@@ -79,4 +79,19 @@ class FirebaseProductDataSource @Inject constructor(
                 }
         }
     }
+
+    override suspend fun deleteProduct(id: String) {
+        return suspendCoroutine { continuation ->
+            documentReference
+                .collection(COLLECTION_PRODUCTS)
+                .document(id)
+                .delete()
+                .addOnSuccessListener {
+                    continuation.resumeWith(Result.success(Unit))
+                }
+                .addOnFailureListener { exception ->
+                    continuation.resumeWith(Result.failure(exception))
+                }
+        }
+    }
 }

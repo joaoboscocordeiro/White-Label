@@ -15,4 +15,6 @@ interface ProductDataSource {
     suspend fun uploadProductImage(imageUri: Uri): String
 
     suspend fun createProduct(product: Product): Product
+
+    suspend fun deleteProduct(id: String)
 }

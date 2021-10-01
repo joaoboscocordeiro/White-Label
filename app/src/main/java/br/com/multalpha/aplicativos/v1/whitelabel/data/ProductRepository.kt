@@ -17,4 +17,6 @@ class ProductRepository @Inject constructor(
     suspend fun uploadProductImage(imageUri: Uri): String = dataSource.uploadProductImage(imageUri)
 
     suspend fun createProduct(product: Product): Product = dataSource.createProduct(product)
+
+    suspend fun deleteProduct(id: String) = dataSource.deleteProduct(id)
 }
